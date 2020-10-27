@@ -38,13 +38,13 @@ dependencies:
   flutter_bloc: 6.0.6
   equatable: ^1.2.4
   # utils
-  flutter_screenutil: ^3.2.0
+  flutter_screenutil: ^2.3.1
   permission_handler: ^5.0.1+1
   device_info: ^0.4.2+9
   package_info: 0.4.3
   crypto: ^2.1.5
   share: ^0.6.5
-  fluro: ^1.6.3
+  fluro: ^1.7.7
   # widget
   font_awesome_flutter: ^8.10.0
   image_picker: 0.6.7+11
@@ -87,10 +87,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: NixieOne
+      fonts:
+        - asset: assets/fonts/NixieOne-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
