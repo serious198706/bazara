@@ -1,0 +1,2 @@
+# bazara
+Bazara Client.
