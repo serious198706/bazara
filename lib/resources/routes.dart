@@ -1,7 +1,7 @@
-import 'package:bazara/pages/login/login_page.dart';
+import 'package:bazara/pages/index.dart';
 import 'package:fluro/fluro.dart';
 
-const String ROUTE_MAIN = '/';
+const String ROUTE_MAIN = '/main';
 const String ROUTE_LOGIN = '/login';
 const String ROUTE_REGISTER = '/register';
 const String ROUTE_FORGET_PASSWORD = '/forget_password';
@@ -28,6 +28,7 @@ class CustomRoute {
 
   CustomRoute() {
     routeMap[ROUTE_LOGIN] = Handler(handlerFunc: (_, __) => LoginPage());
+    routeMap[ROUTE_MAIN] = Handler(handlerFunc: (_, __) => MainPage());
   }
 
   void init() {

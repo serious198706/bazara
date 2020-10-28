@@ -54,7 +54,7 @@ dependencies:
   path_provider: ^1.6.18
   store_redirect: 1.0.2
   cached_network_image: 2.3.3
-
+  carousel_slider: 2.3.1
 
 dev_dependencies:
   flutter_test:

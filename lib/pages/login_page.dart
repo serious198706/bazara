@@ -1,10 +1,13 @@
 import 'package:bazara/resources/themes.dart';
 import 'package:bazara/widgets/clickable.dart';
 import 'package:bazara/widgets/custom_text.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:bazara/utils/screen_util.dart';
 import 'package:flutter/services.dart';
+
+import 'package:bazara/resources/routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -123,7 +126,10 @@ class _LoginPageState extends State<LoginPage> {
           height: 45.h,
           alignment: Alignment.center,
           child: CustomText('LOGIN', color: Colors.white)),
-      onTap: () {},
+      onTap: () {
+        router.navigateTo(context, ROUTE_MAIN,
+            transition: TransitionType.inFromRight);
+      },
     );
   }
 

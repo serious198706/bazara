@@ -7,7 +7,7 @@ class CustomText extends StatelessWidget {
   final String text;
   double fontSize;
   final Color color;
-  final FontWeight fontWeight;
+  FontWeight fontWeight;
   bool softWrap;
   TextAlign textAlign;
 
@@ -22,6 +22,10 @@ class CustomText extends StatelessWidget {
     if (this.fontSize == null) {
       this.fontSize = 16.sp;
     }
+  }
+
+  void bold() {
+    this.fontWeight = FontWeight.bold;
   }
 
   @override

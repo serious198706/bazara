@@ -1,7 +1,6 @@
 import 'dart:convert';
 
-import 'package:bazara/pages/login/login_page.dart';
-import 'package:bazara/pages/login/splash_page.dart';
+import 'package:bazara/pages/splash_page.dart';
 import 'package:bazara/resources/routes.dart';
 import 'package:bazara/resources/themes.dart';
 import 'package:bazara/utils/bloc_manager.dart';
@@ -11,7 +10,6 @@ import 'package:bazara/utils/toast.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -75,17 +73,15 @@ class _AppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
-
     // return MultiBlocProvider(
-      // providers: widget.blocManager.getBlocProviders(),
-      return MaterialApp(
-        navigatorKey: navigatorKey,
-        title: 'Bazara',
-        theme: kLightTheme
-            .getThemeData()
-            .copyWith(platform: Theme.of(context).platform),
-        home: SplashPage(),
+    // providers: widget.blocManager.getBlocProviders(),
+    return MaterialApp(
+      navigatorKey: navigatorKey,
+      title: 'Bazara',
+      theme: kLightTheme
+          .getThemeData()
+          .copyWith(platform: Theme.of(context).platform),
+      home: SplashPage(),
     );
   }
 }
