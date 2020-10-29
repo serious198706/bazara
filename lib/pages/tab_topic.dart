@@ -1,3 +1,4 @@
+import 'package:bazara/resources/themes.dart';
 import 'package:bazara/utils/screen_util.dart';
 import 'package:bazara/widgets/custom_app_bar.dart';
 import 'package:bazara/widgets/custom_text.dart';
@@ -14,13 +15,13 @@ class _TabTopicState extends State<TabTopic>
   @override
   bool get wantKeepAlive => true;
 
-  var hotTopicItems = ['SEARCH', 'MARTIN', 'SPORT', 'DATOU', 'FASHION', 'WTF'];
+  var hotTopicItems = ['SEARCH', 'MARTIN', 'SPORT', 'DATOU', 'FASHION', 'WTF', 'AFAN'];
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      appBar: customAppBar(title: 'TOPIC'),
+      appBar: customAppBar(title: 'TOPIC', showBack: false),
       body: ListView(
         children: [_buildHotTags(), _buildItems()],
       ),
@@ -31,6 +32,7 @@ class _TabTopicState extends State<TabTopic>
     return SizedBox(
       height: 96.w,
       child: ListView.builder(
+        padding: EdgeInsets.all(12.w),
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         itemCount: hotTopicItems.length,
@@ -45,7 +47,7 @@ class _TabTopicState extends State<TabTopic>
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(40.w))),
-        margin: EdgeInsets.all(8.w),
+        margin: EdgeInsets.symmetric(horizontal: 4.h, vertical: 4.w),
         child: Stack(
           children: [
             CachedNetworkImage(
@@ -57,7 +59,7 @@ class _TabTopicState extends State<TabTopic>
             Container(
               alignment: Alignment.center,
               color: Colors.black54,
-              child: CustomText(hotTopicItems[position], color: Colors.white),
+              child: CustomText(hotTopicItems[position], color: Colors.white, fontSize: 14.sp),
             ),
           ],
         ),
@@ -66,12 +68,71 @@ class _TabTopicState extends State<TabTopic>
   }
 
   Widget _buildItems() {
-    return Card(
-      child: Column(
-        children: [
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w),
+      margin: EdgeInsets.only(bottom: 12.w),
+      child: Card(
+        child: Column(
+          children: [
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+            _buildItem(),
+          ],
+        ),
+      ),
+    );
+  }
 
+  Widget _buildItem() {
+    return Container(
+      padding: EdgeInsets.all(16.w),
+      child: Row(
+        children: [
+            SizedBox(
+              width: 64.w,
+              height: 64.w,
+              child: AspectRatio(
+              aspectRatio: 1,
+              child: CachedNetworkImage(
+                  fit: BoxFit.cover,
+                  imageUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3540787812,2042677663&fm=26&gp=0.jpg',
+                ),
+              ),
+            ),
+          SizedBox(width: 12.w),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText('AJ'),
+              SizedBox(height: 4.h),
+              Row(
+                children: [
+                  Icon(Icons.local_fire_department_rounded),
+                  SizedBox(width: 4.w),
+                  CustomText('75.2k'),
+                  SizedBox(width: 12.w),
+                  Icon(Icons.messenger_outlined),
+                  SizedBox(width: 4.w),
+                  CustomText('12.9k'),
+                ],
+              )
+            ],
+          ),
+          Spacer(),
+          Icon(Icons.chevron_right)
         ],
       ),
     );
+
   }
 }

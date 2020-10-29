@@ -34,9 +34,14 @@ ThemeData _buildLightTheme() {
     primaryColor: primaryColor,
     buttonColor: primaryColor,
     appBarTheme: AppBarTheme(
-      textTheme: _buildTextTheme(base.primaryTextTheme),
+      textTheme: base.textTheme.copyWith(
+          headline6: base.textTheme.headline6.copyWith(
+        fontWeight: FontWeight.bold,
+        fontSize: 18.0,
+      )),
       brightness: Brightness.dark,
-      iconTheme: IconThemeData(color: Color(0xFFEFEFEF)),
+      iconTheme: IconThemeData(color: accentColor),
+      color: Colors.white,
       elevation: 0,
     ),
     splashColor: Colors.white24,
@@ -50,7 +55,7 @@ ThemeData _buildLightTheme() {
       colorScheme: colorScheme,
       textTheme: ButtonTextTheme.primary,
     ),
-    iconTheme: base.iconTheme.copyWith(color: accentColor),
+    iconTheme: base.iconTheme.copyWith(color: secondaryTextColor, size: 16.0),
     textTheme: _buildTextTheme(base.textTheme),
     primaryTextTheme: _buildTextTheme(base.primaryTextTheme),
     accentTextTheme: _buildTextTheme(base.accentTextTheme),

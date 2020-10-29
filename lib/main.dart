@@ -80,7 +80,7 @@ class _AppState extends State<MyApp> {
       title: 'Bazara',
       theme: kLightTheme
           .getThemeData()
-          .copyWith(platform: Theme.of(context).platform),
+          .copyWith(platform: Theme.of(context).platform,),
       home: SplashPage(),
     );
   }
