@@ -4,7 +4,7 @@ import 'package:bazara/utils/screen_util.dart';
 
 Widget customAppBar({
   String title,
-  bool centerTitle = true,
+  bool centerTitle = false,
   List<Widget> actions,
 }) {
   return AppBar(

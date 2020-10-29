@@ -1,6 +1,8 @@
 import 'package:bazara/pages/article_page.dart';
+import 'package:bazara/resources/routes.dart';
 import 'package:bazara/widgets/custom_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bazara/utils/screen_util.dart';
@@ -268,6 +270,6 @@ class _TabFeedState extends State<TabFeed> with AutomaticKeepAliveClientMixin {
   }
 
   void _gotoDetail() {
-
+    router.navigateTo(context, ROUTE_TOPIC_THREAD_DETAIL, transition: TransitionType.inFromRight);
   }
 }
